@@ -1,6 +1,6 @@
 public class TestFuncionario {
     public static void main(String[] args) {
-        Funcionario gabriel = new Funcionario();
+        Funcionario gabriel = new Administrador();
         gabriel.setNombre("gabriel");
         gabriel.setDocumento("503020");
         gabriel.setSalario(2000);
@@ -8,6 +8,7 @@ public class TestFuncionario {
         System.out.println(gabriel.getSalario());
         System.out.println(gabriel.getBonificacion());
         System.out.println("*************");
+        System.out.println(gabriel);
 
     }
 }

@@ -1,10 +1,10 @@
-class Cuenta {
-   private double saldo;
+public abstract class Cuenta {
+   protected double saldo;
    private int agencia;
    private int numero;
 //tipo de dato cliente
    private Cliente titular = new Cliente();
-   //esta ariable va  aser de la clase no de la instancia
+   //esta variable va  haser de la clase no de la instancia
   private static int total = 0;
 
 
@@ -21,13 +21,14 @@ class Cuenta {
 
     //valor representa la cantidad de dinero a depositar
     //void no retorna
-  public void depositar(double valor){
+  public abstract void depositar(double valor);
+   //{
        //esta cuenta        esta cuenta
        //This account       This account
        //this object
        //aca le diremos al saldo de esta cuenta
-        this.saldo += valor;
-   }
+        //this.saldo += valor;
+   //}
    //vamos a referenciar bolean para ahorrar trabajo
     //retorna valor
   public boolean retirar(double valor){
@@ -40,7 +41,7 @@ class Cuenta {
 
  public boolean transferir(double valor,Cuenta cuenta){
     if (this.saldo >= valor){
-        this.saldo = this.saldo - valor;
+        this.retirar(valor);
         cuenta.depositar(valor);
         return true;
     }else{
